@@ -2,9 +2,9 @@ import Image from "next/image";
 import { CheckCircle2, Droplets, Home, ShieldCheck, Sparkles, Store, TimerReset } from "lucide-react";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { HeroSection } from "@/components/hero-section";
 
 const services = [
   {
@@ -70,67 +70,7 @@ export default function HomePage() {
         </div>
       </header>
 
-      <section className="mx-auto flex max-w-6xl flex-col px-6 pb-20 pt-10 lg:px-10">
-
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-8">
-            <Badge variant="secondary" className="w-fit">
-              Rated 4.9/5 by 600+ homeowners
-            </Badge>
-            <div className="space-y-5">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                Professional Pressure Washing That Makes Your Property Look New Again
-              </h1>
-              <p className="max-w-xl text-lg text-muted-foreground">
-                Transform siding, driveways, patios, and commercial exteriors with fast, eco-safe, damage-free cleaning
-                from trained local technicians.
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-3">
-              <Button size="lg">Get Free Estimate</Button>
-              <Button size="lg" variant="secondary">
-                View Services
-              </Button>
-            </div>
-            <div className="grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
-              <Stat label="Avg. Response" value="< 15 min" />
-              <Stat label="Warranty" value="14 Days" />
-              <Stat label="Projects Done" value="4,200+" />
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="relative overflow-hidden rounded-2xl border bg-card shadow-lg">
-              <Image
-                src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=1400&q=80"
-                alt="Professional exterior house washing"
-                width={1000}
-                height={700}
-                className="h-[380px] w-full object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5">
-                <p className="max-w-md text-sm font-medium text-white/95">
-                  Clean, safe, and premium exterior detailing for residential and commercial properties.
-                </p>
-              </div>
-            </div>
-            <Card className="border-white/50 bg-white/90 backdrop-blur">
-              <CardHeader>
-                <CardTitle>Book in 60 seconds</CardTitle>
-                <CardDescription>Same-day quotes for residential and commercial properties.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Feature label="Licensed & insured professionals" />
-                <Feature label="Soft wash + high-pressure equipment" />
-                <Feature label="Upfront pricing and no hidden fees" />
-                <Button className="mt-2 w-full">Request Fast Quote</Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       <section id="services" className="mx-auto max-w-6xl px-6 pb-20 lg:px-10">
         <div className="mb-8 flex items-end justify-between gap-5">
@@ -241,24 +181,6 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="rounded-lg border bg-card p-4">
-      <p className="text-xl font-semibold">{value}</p>
-      <p className="text-xs text-muted-foreground">{label}</p>
-    </div>
-  );
-}
-
-function Feature({ label }: { label: string }) {
-  return (
-    <div className="flex items-start gap-2 text-sm">
-      <CheckCircle2 className="mt-0.5 h-4 w-4 text-primary" />
-      <span>{label}</span>
-    </div>
   );
 }
 
